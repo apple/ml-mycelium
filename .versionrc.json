@@ -1,0 +1,15 @@
+{
+  "preMajor": true,
+  "types": [
+    { "type": "feat", "section": "Features" },
+    { "type": "fix", "section": "Fixes" },
+    { "type": "chore", "section": "Chore" },
+    { "type": "docs", "section": "Docs" },
+    { "type": "style", "hidden": true },
+    { "type": "refactor", "section": "Refactor" },
+    { "type": "perf", "section": "Performance" },
+    { "type": "test", "section": "Test" }
+  ],
+  "tagPrefix": "v",
+  "releaseCommitMessageFormat": "chore: release `{{currentTag}}` :tada:"
+}

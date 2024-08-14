@@ -1,0 +1,30 @@
+.DS_Store
+node_modules
+/build
+/dist
+/dist-app
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
+.cicd/
+.pnpm-store/
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+.vscode
+
+/gen
+
+# Ignore files for PNPM, NPM and YARN
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# The changelog is generated automatically.
+CHANGELOG.md
+
+/static/docs
+
+# The following files are automtically generated.
+/src/lib/loader/onnx/proto

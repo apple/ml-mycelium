@@ -1,0 +1,199 @@
+<!--
+  For licensing see accompanying LICENSE file.
+  Copyright (C) 2024 Apple Inc. All Rights Reserved.
+-->
+
+<script lang="ts">
+  // Replace `$lib` with `@apple/mycelium` in your application.
+  import * as myc from '$lib';
+
+  // In your application it's also essential to import our provided stylesheet.
+  // This means adding the following line to the appropriate part of your code.
+  // import "@apple/mycelium/dist/style.css"
+
+  import { onMount } from 'svelte';
+
+  // We define a set of nodes.
+  const [a, b, c, d, e, f] = ['a', 'b', 'c', 'd', 'e', 'f'] as Array<myc.NodeId>;
+
+  // And a set of modules.
+  const [m, n] = ['m', 'n'] as Array<myc.NodeId>;
+
+  // The following are helper functions that create the views for each node.
+  function createNode(nodeId: myc.NodeId): myc.ui.Node {
+    return new myc.ui.Node(
+      nodeId,
+      new myc.ui.VStack(new myc.ui.Text('Node').with({ fontWeight: 600 }), new myc.ui.Text(nodeId)),
+    ).with({ selectable: true, ...(nodeId === b && { badge: { color: 'red', text: 'i' } }) });
+  }
+
+  function createModule(nodeId: myc.NodeId): myc.ui.Node {
+    return new myc.ui.Node(
+      nodeId,
+      new myc.ui.VStack(new myc.ui.Text('Module').with({ fontWeight: 600 }), new myc.ui.Text(nodeId)),
+   ).with({ backgroundColor: myc.ui.Theme.GRAY_BACKGROUND });
+  }
+
+  const network = new myc.Network();
+  network.setNode(n, createModule(n));
+  network.setNodeWithParent(m, createModule(m), n);
+  network.setNode(a, createNode(a));
+  network.setNodeWithParent(b, createNode(b), n);
+  network.setNodeWithParent(c, createNode(c), m);
+  network.setNodeWithParent(d, createNode(d), m);
+  network.setNode(e, createNode(e));
+  network.setNode(f, createNode(f));
+  network.setEdge(a, b);
+  network.setEdge(b, c);
+  network.setEdge(b, d);
+  network.setEdge(c, d);
+  network.setEdge(d, e);
+  network.setEdge(d, f);
+
+  let app: HTMLElement;
+  let viewer: myc.NetworkViewer;
+
+  onMount(() => {
+    viewer = myc.NetworkViewer.create(network, app, {
+      showBreadcrumbs: true,
+      showResetView: true,
+      minimap: false,
+      watermark: false
+    });
+  });
+
+async function animate(viewer) {
+  if(viewer !== undefined) {
+    await viewer.setSelection(d, { shouldExpand: true });
+
+    viewer.setDecoration(a, {
+      backgroundColor: 'rgb(237,249,239)',
+      borderColor: 'rgb(113,201,117)',
+    });
+
+    viewer.setDecoration(f, {
+      backgroundColor: 'rgb(252,236,235)',
+      borderColor: 'rgb(239,90,88)',
+    });
+  }
+}
+  $: animate(viewer);
+</script>
+
+## Getting Started
+
+The following shows a small hierarchical graph visualized by Mycelium.
+In this section we will show you how to recreate that example.
+
+<!-- The viewer will be embedded here. -->
+
+<div class="border rounded-md overflow-hidden">
+  <div id="app" style="height: 500px" bind:this={app} />
+</div>
+
+There are several steps required to embed Mycelium into your application, which we will outline below. You can also find the full [source code of this example]() on GitHub.
+
+```sh
+npm install @apple/mycelium
+```
+
+Now we can import the library via the following commands.
+It's important to note that we also have to import the provided CSS stylesheet, otherwise some styles might be missing.
+
+```ts
+import * as myc from '@apple/mycelium';
+import '@apple/mycelium/dist/style.css';
+```
+
+### Creating a Network
+
+Next, we can create a simple network.
+Mycelium supports regular nodes, as well as hierarchical modules.
+
+```ts
+// We define a set of nodes.
+const [a, b, c, d, e, f] = ['a', 'b', 'c', 'd', 'e', 'f'] as Array<myc.NodeId>;
+
+// And a set of modules.
+const [m, n] = ['m', 'n'] as Array<myc.NodeId>;
+```
+
+In Mycelium the contents of a node (and other user interface elements) is defined via a small `myc.ui` framework.
+For this example we create two helper functions to generate nodes and modules respectively.
+
+```ts
+function createNode(nodeId: myc.NodeId): myc.ui.Node {
+  return new myc.ui.Node(
+    nodeId,
+    new myc.ui.VStack(new myc.ui.Text('Node').with({ fontWeight: 600 }), new myc.ui.Text(nodeId)),
+  ).with({ selectable: true, ...(nodeId === b && { badge: { color: 'red', text: 'i' } }) });
+}
+
+function createModule(nodeId: myc.NodeId): myc.ui.Node {
+  return new myc.ui.Node(
+    nodeId,
+    new myc.ui.VStack(new myc.ui.Text('Module').with({ fontWeight: 600 }), new myc.ui.Text(nodeId)),
+  ).with({ backgroundColor: myc.ui.Theme.GRAY_BACKGROUND });
+}
+```
+
+Now we have everything in place to define the structure of the network:
+
+```ts
+const network = new myc.Network();
+network.setNode(n, createModule(n));
+network.setNodeWithParent(m, createModule(m), n);
+network.setNode(a, createNode(a));
+network.setNodeWithParent(b, createNode(b), n);
+network.setNodeWithParent(c, createNode(c), m);
+network.setNodeWithParent(d, createNode(d), m);
+network.setNode(e, createNode(e));
+network.setNode(f, createNode(f));
+network.setEdge(a, b);
+network.setEdge(b, c);
+network.setEdge(b, d);
+network.setEdge(c, d);
+network.setEdge(d, e);
+network.setEdge(d, f);
+```
+
+Once we have defined the network, we can create an instance of `NetworkViewer` and mount it to the DOM.
+First, we create a `div` container that will hold the viewer.
+
+```html
+<div style="width: 500; height: 500" id="app" />
+```
+
+It's important to note that this container should have a defined size either via explicitly setting its size, or by deriving it via `width: 100%` and `height: 100%`.
+Note that this requires the size of the parent to be set as well.
+
+Then, we are ready to create a `viewer`:
+
+```ts
+const app = document.getElementById('app');
+const viewer = myc.NetworkViewer.create(network, app, {
+  showBreadcrumbs: true,
+  minimap: false,
+});
+```
+
+Finally, we can interact with the representation through methods defined on the `viewer`.
+For example, to set a selection we can simply call:
+
+```ts
+await viewer.setSelection(d, { shouldExpand: true });
+```
+
+Or, we can change the color of certain nodes via the `setDecoration` function.
+
+```ts
+await viewer.setDecoration(a, {
+  backgroundColor: 'rgb(237,249,239)',
+  borderColor: 'rgb(113,201,117)',
+});
+
+await viewer.setDecoration(f, {
+  backgroundColor: 'rgb(252,236,235)',
+  borderColor: 'rgb(239,90,88)',
+});
+```

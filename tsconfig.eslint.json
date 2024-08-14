@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig",
+  "files": [
+    "tailwind.config.ts",
+    "svelte.config.js",
+    "vite.config.lib.ts",
+    "prettier.config.cjs",
+    "playwright.config.ts",
+    "postcss.config.js",
+    ".eslintrc.cjs"
+  ]
+}

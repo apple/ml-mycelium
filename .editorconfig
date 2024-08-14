@@ -1,0 +1,16 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# The following rules will be applied to Prettier too.
+end_of_line = lf
+indent_style = spaces
+indent_size = 2
+max_line_length = 100

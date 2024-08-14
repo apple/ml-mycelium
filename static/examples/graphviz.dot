@@ -1,0 +1,9 @@
+digraph {
+  a -> b;
+  subgraph group_1 {
+    b -> c;
+  }
+  c -> d;
+  a -> m;
+  m -> d;
+}
