@@ -1,7 +1,7 @@
 {
   "name": "@apple/mycelium",
   "license": "SEE LICENSE IN `LICENSE`",
-  "version": "0.13.1",
+  "version": "0.13.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/apple/ml-mycelium"
