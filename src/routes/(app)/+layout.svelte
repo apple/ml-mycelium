@@ -14,7 +14,7 @@
   <nav class="bg-white shadow py-2 border-b">
     <div class="flex gap-3 mx-auto px-4 sm:px-6 lg:px-8 items-center justify-between">
       <!-- Title -->
-      <a class="text-xl space-x-2" href={`/${base}`}>
+      <a class="text-xl space-x-2" href={`${base}/`}>
         <span class="app-name"> Mycelium</span>
       </a>
 

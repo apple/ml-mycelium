@@ -9,6 +9,7 @@ const config = {
   kit: {
     paths: {
       base: '/ml-mycelium',
+      relative: false,
     },
     alias: {
       $lib: './src/lib',

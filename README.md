@@ -64,6 +64,15 @@ The following is an example of the output of Mycelium for a small network with t
   <img src="https://raw.githubusercontent.com/apple/ml-mycelium/main/example.png" alt="Mycelium example" height="600" />
 </p>
 
+## Deployment
+
+To deploy Mycelium to GitHub Pages, we can run the following commands:
+
+```sh
+pnpm install
+pnpm run deploy # adding `run` is important here.
+```
+
 ### Development
 
 ```sh
