@@ -35,7 +35,6 @@ To cite our paper, please use:
 
 ### Usage
 
-
 To install Mycelium via [NPM](https://www.npmjs.com/package/@apple/mycelium) you can run:
 
 ```sh

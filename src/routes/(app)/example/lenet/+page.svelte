@@ -4,9 +4,9 @@
 -->
 
 <script lang="ts">
-   import Viewer from '../../_components/Viewer.svelte';
-   import type { PageData } from './$types';
-   export let data: PageData;
- </script>
+  import Viewer from '../../_components/Viewer.svelte';
+  import type { PageData } from './$types';
+  export let data: PageData;
+</script>
 
- <Viewer title="LeNet • Example" network={data.network} />
+<Viewer title="LeNet • Example" network={data.network} />

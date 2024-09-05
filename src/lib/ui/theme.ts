@@ -19,7 +19,7 @@ export const colors = {
   background: {
     gray: 'rgb(250, 250, 250)',
     darkGray: 'rgb(51,51,51)',
-  }
+  },
 } as const;
 
 export const font = {

@@ -7,7 +7,8 @@ pbts -o src/lib/loader/onnx/compiled.d.ts src/lib/loader/onnx/compiled.js
 ```
 
 :warning: Small adjustments need to be made to the resulting file for it to properly be included into the project:
+
 ```js
 // proto/index.mjs
-import $protobuf from "protobufjs/minimal";
+import $protobuf from 'protobufjs/minimal';
 ```

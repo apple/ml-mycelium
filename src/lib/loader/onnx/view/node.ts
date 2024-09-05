@@ -34,7 +34,6 @@ export function convertNode(
   const sections = [];
 
   if (node.input) {
-
     const addInput = (name: string, idx: number) => {
       const i = context.get(node.input?.[idx] as TensorId);
       i && inputs.push(convertTensor(i)(name));

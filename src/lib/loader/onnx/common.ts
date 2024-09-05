@@ -1,4 +1,4 @@
-import type { Brand } from "$lib/brand";
+import type { Brand } from '$lib/brand';
 
 export type TensorId = Brand<'TensorId', string>;
 

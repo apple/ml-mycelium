@@ -83,7 +83,10 @@ export class Node extends WithOptions<INodeOptions> implements IViewBuilder {
     const prepared = [
       ...intersperse(
         this.contents.map((c) => new Padded(c, this.options.padding)),
-        new Separator().with({color: this.options.borderColor, dash: this.options.borderDash}) as IViewBuilder,
+        new Separator().with({
+          color: this.options.borderColor,
+          dash: this.options.borderDash,
+        }) as IViewBuilder,
       ),
     ];
 

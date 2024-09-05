@@ -9,5 +9,5 @@
 </script>
 
 <div class="flex gap-1">
-  <span class="text-gray-500">{org}</span><span  class="text-gray-300">/</span><span>{model}</span>
+  <span class="text-gray-500">{org}</span><span class="text-gray-300">/</span><span>{model}</span>
 </div>

@@ -7,7 +7,6 @@ export function convertValueInfo(
   id: NodeId,
   input: proto.onnx.IValueInfoProto,
 ) {
-
   const dims = input.type?.tensorType?.shape?.dim || [];
 
   return new ui.Node(
@@ -17,9 +16,7 @@ export function convertValueInfo(
     }),
     new ui.HStack(
       new ui.Text(dataTypeToString(input.type?.tensorType?.elemType as number)),
-      new ui.Text(
-        `<${(dims).map((d) => (d.dimValue as number) || 0).join('x')}>`,
-      ),
+      new ui.Text(`<${dims.map((d) => (d.dimValue as number) || 0).join('x')}>`),
     ).with({ spacing: 4 }),
   )
     .with({ borderDash: 4 })

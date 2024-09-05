@@ -36,7 +36,10 @@
           </div>
           <div class="border rounded-lg p-4 flex justify-between items-center">
             <div>GraphViz</div>
-            <div class="px-8 text-gray-400 text-sm text-left">Mycelium also comes with a very basic loader for <i>.dot</i> files. Please note that it only works with graphs that form a DAG.</div>
+            <div class="px-8 text-gray-400 text-sm text-left">
+              Mycelium also comes with a very basic loader for <i>.dot</i> files. Please note that it
+              only works with graphs that form a DAG.
+            </div>
             <a
               href="{base}/example/dot"
               class="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
