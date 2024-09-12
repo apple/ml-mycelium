@@ -4,7 +4,7 @@
   "version": "0.13.2",
   "repository": {
     "type": "git",
-    "url": "https://github.com/apple/ml-mycelium"
+    "url": "https://apple.github.io/ml-mycelium"
   },
   "description": "Interactive web viewer for exploring computational graphs such as neural networks. Powers the visualization of Talaria.",
   "author": {

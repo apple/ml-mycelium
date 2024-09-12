@@ -7,6 +7,7 @@
   import '../../app.css';
   import { base } from '$app/paths';
   import DragDrop from '../_components/DragDrop.svelte';
+  import Outlink from '../_components/Outlink.svelte';
 
   import { Icon } from '@steeze-ui/svelte-icon';
   import { ArrowTopRightOnSquare } from '@steeze-ui/heroicons';
@@ -15,13 +16,16 @@
 <DragDrop>
   <div class="bg-white">
     <header class="absolute inset-x-0 top-0 z-50">
-      <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-        <div class="flex lg:flex-1">
+      <nav
+        class="flex md:flex-row flex-col items-center justify-between p-6 lg:px-8 gap-x-20"
+        aria-label="Global"
+      >
+        <div class="flex md:flex-row flex-col">
           <a href={`${base}/`} class="-m-1.5 p-1.5">
             <span class="text-xl"> Mycelium</span>
           </a>
         </div>
-        <div class="hidden lg:flex lg:gap-x-12">
+        <div class="lg:flex lg:gap-x-12">
           <a
             href="{base}/viewer"
             class="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-600">Viewer</a
@@ -41,29 +45,9 @@
             >Documentation</a
           >
         </div>
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end gap-4">
-          <a
-            href="https://github.com/apple/ml-mycelium"
-            class="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-600"
-            ><div class="flex gap-1 items-center">
-              <span>GitHub</span><Icon
-                src={ArrowTopRightOnSquare}
-                theme="solid"
-                class="text-gray-300 h-4 w-auto"
-              />
-            </div></a
-          >
-          <a
-            href="https://www.npmjs.com/package/@apple/mycelium"
-            class="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-600"
-            ><div class="flex gap-1 items-center">
-              <span>NPM</span><Icon
-                src={ArrowTopRightOnSquare}
-                theme="solid"
-                class="text-gray-300 h-4 w-auto"
-              />
-            </div></a
-          >
+        <div class="lg:flex lg:gap-12">
+          <Outlink href="https://github.com/apple/ml-mycelium">GitHub</Outlink>
+          <Outlink href="https://www.npmjs.com/package/@apple/mycelium">NPM</Outlink>
         </div>
       </nav>
     </header>
