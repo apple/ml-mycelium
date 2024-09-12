@@ -17,7 +17,7 @@
 
   import { onMount } from 'svelte';
 
-  import Citation from './_components/Citation.mdx';
+  import Citation from './_components/Citation.svelte';
   import Feature from './_components/Feature.svelte';
   import Person from './_components/Person.svelte';
   import Section from './_components/Section.svelte';
@@ -77,7 +77,7 @@
   async function animate(viewer: myc.NetworkViewer) {
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (viewer !== undefined) {
-      await viewer.setSelection(d, { shouldExpand: true });
+      await viewer.setSelection(d, { expand: true });
 
       viewer.setDecoration(a, {
         backgroundColor: 'rgb(237,249,239)',

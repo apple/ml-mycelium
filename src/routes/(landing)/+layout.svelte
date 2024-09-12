@@ -8,9 +8,6 @@
   import { base } from '$app/paths';
   import DragDrop from '../_components/DragDrop.svelte';
   import Outlink from '../_components/Outlink.svelte';
-
-  import { Icon } from '@steeze-ui/svelte-icon';
-  import { ArrowTopRightOnSquare } from '@steeze-ui/heroicons';
 </script>
 
 <DragDrop>
