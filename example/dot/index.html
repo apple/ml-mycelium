@@ -1,0 +1,62 @@
+<!--
+  For licensing see accompanying LICENSE file.
+  Copyright (C) 2024 Apple Inc. All Rights Reserved.
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/ml-mycelium/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    
+		<link href="/ml-mycelium/_app/immutable/assets/DragDrop.DBvFbZwn.css" rel="stylesheet">
+		<link href="/ml-mycelium/_app/immutable/assets/viewer.BlCgbFGn.css" rel="stylesheet">
+		<link rel="modulepreload" href="/ml-mycelium/_app/immutable/entry/start.ogrxYAPV.js">
+		<link rel="modulepreload" href="/ml-mycelium/_app/immutable/chunks/entry.C06OU6_c.js">
+		<link rel="modulepreload" href="/ml-mycelium/_app/immutable/chunks/scheduler.BZf3Antt.js">
+		<link rel="modulepreload" href="/ml-mycelium/_app/immutable/chunks/index.DrtbdpeK.js">
+		<link rel="modulepreload" href="/ml-mycelium/_app/immutable/chunks/paths.DYh8d7W1.js">
+		<link rel="modulepreload" href="/ml-mycelium/_app/immutable/entry/app.BwrF9uNt.js">
+		<link rel="modulepreload" href="/ml-mycelium/_app/immutable/chunks/index.C7bWdOrd.js">
+		<link rel="modulepreload" href="/ml-mycelium/_app/immutable/nodes/0.CEPhg4Kl.js">
+		<link rel="modulepreload" href="/ml-mycelium/_app/immutable/nodes/2.DqWJfHgO.js">
+		<link rel="modulepreload" href="/ml-mycelium/_app/immutable/chunks/DragDrop.BL3G3uyg.js">
+		<link rel="modulepreload" href="/ml-mycelium/_app/immutable/chunks/stores.BEpXIDt_.js">
+		<link rel="modulepreload" href="/ml-mycelium/_app/immutable/nodes/3.BvfQdEdE.js">
+		<link rel="modulepreload" href="/ml-mycelium/_app/immutable/nodes/5.CVqn8R_k.js">
+		<link rel="modulepreload" href="/ml-mycelium/_app/immutable/chunks/dot.Bgkvpxeo.js">
+		<link rel="modulepreload" href="/ml-mycelium/_app/immutable/chunks/viewer.BYFc8Cdc.js">
+		<link rel="modulepreload" href="/ml-mycelium/_app/immutable/chunks/spread.CUGnlXHs.js">
+		<link rel="modulepreload" href="/ml-mycelium/_app/immutable/chunks/Viewer.C5t0eI9O.js"><title>Graphviz Dot • Example • Mycelium</title><!-- HEAD_svelte-1nyv8ri_START --><!-- HEAD_svelte-1nyv8ri_END -->
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">    <div class="h-screen flex flex-col"><nav class="bg-white shadow py-2 border-b" data-svelte-h="svelte-vjaqyl"><div class="flex gap-3 mx-auto px-4 sm:px-6 lg:px-8 items-center justify-between"> <a class="text-xl space-x-2" href="/ml-mycelium/"><span class="app-name"> Mycelium</span></a>  <div class=""><div class="border rounded-lg px-2 py-1 text-xs">Drop an <i>.onnx</i> file into the area below to quickly visualize it.</div></div>  <div class="flex gap-4 items-center"> <span class="text-xs pr-5">Made with ❤️ for <a class="text-blue-500 hover:text-blue-600" target="_blank" href="https://machinelearning.apple.com/research/talaria">Talaria</a></span> <div class="text-sm space-x-4"><a class="text-blue-500 hover:text-blue-600" target="_blank" href="/ml-mycelium/docs/index.html">Documentation</a> <a class="text-blue-500 hover:text-blue-600" target="_blank" href="https://www.npmjs.com/package/@apple/mycelium">NPM</a> <a class="text-blue-500 hover:text-blue-600" target="_blank" href="https://github.com/apple/ml-mycelium">GitHub</a></div></div></div></nav>   <div role="button" tabindex="0" aria-label="dropzone" class="grow"> <div class="w-full h-full">     <div class="w-full h-full" id="app"></div></div></div></div> 
+			<script type="application/json" data-sveltekit-fetched data-url="/ml-mycelium/examples/graphviz.dot">{"status":200,"statusText":"","headers":{},"body":"digraph {\n  a -> b;\n  subgraph group_1 {\n    b -> c;\n  }\n  c -> d;\n  a -> m;\n  m -> d;\n}\n"}</script>
+			<script>
+				{
+					__sveltekit_qrqnau = {
+						base: "/ml-mycelium",
+						assets: "/ml-mycelium"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null,null,null];
+
+					Promise.all([
+						import("/ml-mycelium/_app/immutable/entry/start.ogrxYAPV.js"),
+						import("/ml-mycelium/_app/immutable/entry/app.BwrF9uNt.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2, 3, 5],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>
