@@ -60,7 +60,7 @@ The resulting tarball can than be added to your project's dependencies in `packa
 The following is an example of the output of Mycelium for a small network with two levels of hierarchy. The information that is shown for each node is fully customizable.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/apple/ml-mycelium/main/example.png" alt="Mycelium example" height="600" />
+  <img src="https://raw.githubusercontent.com/apple/ml-mycelium/main/example.png" alt="Mycelium example" style="max-height: 600" />
 </p>
 
 ## Deployment
