@@ -1,7 +1,7 @@
 `proto` contains the compiled and vendored `protobuf` parser.
 
 ```
-npm install -g protobufj-cli
+npm install -g protobufjs-cli
 pbjs -t static-module -w es6 -r onnx -o src/lib/loader/onnx/compiled.js src/lib/loader/onnx/onnx.proto3
 pbts -o src/lib/loader/onnx/compiled.d.ts src/lib/loader/onnx/compiled.js
 ```
