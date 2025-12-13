@@ -26,10 +26,10 @@
     return new myc.ui.Node(
       nodeId,
       new myc.ui.VStack(
-        new myc.ui.Text('Module').with({ fontWeight: 600 }),
-        new myc.ui.Text(nodeId),
+        new myc.ui.Text('Module').with({ fontWeight: 600, foregroundColor: myc.ui.Theme.colors.foreground.gray }),
+        new myc.ui.Text(nodeId).with({ foregroundColor: myc.ui.Theme.colors.foreground.graySecondary }),
       ),
-    ).with({ backgroundColor: myc.ui.Theme.colors.background.gray });
+    ).with({ backgroundColor: myc.ui.Theme.colors.white });
   }
 
   const network = new myc.Network();

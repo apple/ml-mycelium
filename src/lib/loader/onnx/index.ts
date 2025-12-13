@@ -141,11 +141,14 @@ export function createNetworkModel(onnxFile: Uint8Array, options?: Partial<Graph
       moduleId,
       new ui.Node(
         moduleId,
-        new ui.VStack(new ui.Text('Module').with({ fontWeight: 500 }), new ui.Text(moduleId)).with({
+        new ui.VStack(
+          new ui.Text('Module').with({ fontWeight: 500, foregroundColor: ui.Theme.colors.foreground.gray }), 
+          new ui.Text(moduleId).with({ foregroundColor: ui.Theme.colors.foreground.graySecondary })
+        ).with({
           spacing: 8,
         }),
       ).with({
-        backgroundColor: ui.Theme.colors.background.gray,
+        backgroundColor: ui.Theme.colors.white,
         badge: { color: '#8e8e8e', text: '+' },
       }),
     );

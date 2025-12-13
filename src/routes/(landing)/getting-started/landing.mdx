@@ -30,8 +30,11 @@
   function createModule(nodeId: myc.NodeId): myc.ui.Node {
     return new myc.ui.Node(
       nodeId,
-      new myc.ui.VStack(new myc.ui.Text('Module').with({ fontWeight: 600 }), new myc.ui.Text(nodeId)),
-   ).with({ backgroundColor: myc.ui.Theme.GRAY_BACKGROUND });
+      new myc.ui.VStack(
+        new myc.ui.Text('Module').with({ fontWeight: 600, foregroundColor: myc.ui.Theme.colors.foreground.gray }),
+        new myc.ui.Text(nodeId).with({ foregroundColor: myc.ui.Theme.colors.foreground.graySecondary })
+      ),
+   ).with({ backgroundColor: myc.ui.Theme.colors.white });
   }
 
   const network = new myc.Network();
@@ -132,8 +135,11 @@ function createNode(nodeId: myc.NodeId): myc.ui.Node {
 function createModule(nodeId: myc.NodeId): myc.ui.Node {
   return new myc.ui.Node(
     nodeId,
-    new myc.ui.VStack(new myc.ui.Text('Module').with({ fontWeight: 600 }), new myc.ui.Text(nodeId)),
-  ).with({ backgroundColor: myc.ui.Theme.GRAY_BACKGROUND });
+    new myc.ui.VStack(
+      new myc.ui.Text('Module').with({ fontWeight: 600, foregroundColor: myc.ui.Theme.colors.foreground.gray }),
+      new myc.ui.Text(nodeId).with({ foregroundColor: myc.ui.Theme.colors.foreground.graySecondary })
+    ),
+  ).with({ backgroundColor: myc.ui.Theme.colors.white });
 }
 ```
 
