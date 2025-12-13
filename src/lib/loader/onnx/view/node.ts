@@ -80,5 +80,8 @@ export function convertNode(
       new ui.Text(id).with({ foregroundColor: ui.Theme.colors.foreground.grayTertiary }),
     ).with({ spread: true, spacing: 8 }),
     ...sections,
-  ).with({ tooltip: () => toTooltip(node) });
+  ).with({ 
+    tooltip: () => toTooltip(node),
+    backgroundColor: ui.Theme.colors.white
+  });
 }

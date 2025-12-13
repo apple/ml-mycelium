@@ -12,9 +12,9 @@ function createNode(nodeId: NodeId): ui.Node {
 }
 
 function createModule(nodeId: NodeId): ui.Node {
-  return new ui.Node(nodeId, new ui.Text(nodeId).with({ fontWeight: 600 })).with({
+  return new ui.Node(nodeId, new ui.Text(nodeId).with({ fontWeight: 600, foregroundColor: ui.Theme.colors.foreground.gray })).with({
     selectable: true,
-    backgroundColor: ui.Theme.colors.background.gray,
+    backgroundColor: ui.Theme.colors.white,
   });
 }
 
